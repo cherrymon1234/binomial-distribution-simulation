@@ -1,4 +1,4 @@
-# binomial-distribution-simulation
+# Binomial-Distribution-Simulation
 
 ## 소개
 Unity 2D 물리엔진을 활용하여 이항분포를 시각,이론적으로 구현한 프로젝트입니다.
@@ -23,3 +23,6 @@ Unity 2D 물리엔진을 활용하여 이항분포를 시각,이론적으로 구
 1. Unity로 프로젝트 열기
 2. Scene 실행
 3. Spawn 실행
+
+🎥 Demo
+![demo](./실행영상.gif)
