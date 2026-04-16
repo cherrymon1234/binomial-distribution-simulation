@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    Rigidbody2D rb;
-    
+    [Header("pushPower")]
     public float pushPower = 5f;
 
-    public string targetLayerName = "Ball_Result";
+    Rigidbody2D rb;
+
+    private string targetLayerName = "Ball_Result";
     private int targetLayer;
+
+    public ResultManager resultManager; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +38,7 @@ public class Ball : MonoBehaviour
     {
         if (gameObject.layer != targetLayer && transform.position.y < -1)
         {
+            resultManager.SetDone(transform.position.x);
             gameObject.layer = targetLayer;
         }
     }

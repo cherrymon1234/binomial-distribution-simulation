@@ -815,6 +815,60 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!1 &297571731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297571733}
+  - component: {fileID: 297571734}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &297571733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297571731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.10912, y: 2.11389, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297571734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297571731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4770e1b0b5c045fa9bea0ee30b8d911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallSpawner
+  ballPrefab: {fileID: 0}
+  totalCount: 150
+  spawnInterval: 0.1
+  spawnOffsetRange: {x: 3, y: 8}
+  firstWall: {fileID: 0}
+  secondWall: {fileID: 0}
+  thirdWall: {fileID: 0}
+  fourth: {fileID: 0}
+  fifthWall: {fileID: 0}
+  sixthWall: {fileID: 0}
 --- !u!1 &341524320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,7 +2664,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 822060005}
-  - component: {fileID: 822060006}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -2637,22 +2690,6 @@ Transform:
   - {fileID: 221705635}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &822060006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822060004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4770e1b0b5c045fa9bea0ee30b8d911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Spawn
-  ballPrefab: {fileID: 7328562376406602578, guid: 167f54c2f355f41e4a513ca9d4c11912, type: 3}
-  totalCount: 300
-  spawnInterval: 0.1
-  spawnOffsetRange: {x: 3, y: 8}
 --- !u!1 &872541674
 GameObject:
   m_ObjectHideFlags: 0
@@ -5850,7 +5887,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 822060006}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BallSpawner, Assembly-CSharp
         m_MethodName: StartSpawn
         m_Mode: 1
@@ -5909,3 +5946,4 @@ SceneRoots:
   - {fileID: 822060005}
   - {fileID: 191231680}
   - {fileID: 1463972683}
+  - {fileID: 297571733}

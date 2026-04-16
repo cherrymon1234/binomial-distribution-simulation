@@ -7,12 +7,17 @@ public class BallSpawner : MonoBehaviour
     [Header("Prefab")]
     public GameObject ballPrefab;
 
+    [Header("ResultManager")]
+    public ResultManager resultManager;
+
     [Header("Spawn Setting")]
     public int totalCount = 150;
     public float spawnInterval = 0.1f;
 
     [Header("Spawn Area")]
     public Vector2 spawnOffsetRange = new Vector2(3f, 8f);
+
+    public string targetLayer = "Ball_Result";
 
     private List<GameObject> ballList = new List<GameObject>();
 
@@ -28,7 +33,9 @@ public class BallSpawner : MonoBehaviour
             }
         }
 
-    ballList.Clear();
+        ballList.Clear();
+        resultManager.isPrint = false;
+        resultManager.ballCount = 0;
 
         if (isSpawning) return;
         StartCoroutine(SpawnRoutine());
@@ -52,6 +59,8 @@ public class BallSpawner : MonoBehaviour
             );
 
             ballList.Add(ball);
+            Ball ballScript = ballPrefab.GetComponent<Ball>();
+            ballScript.resultManager = resultManager;
 
             yield return new WaitForSeconds(spawnInterval);
         }
